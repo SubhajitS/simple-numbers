@@ -1,13 +1,17 @@
-<div class="row"><p class="col">Find the <b>Greater</b> number</p></div>
 <div class="row">
-    <div class="col"><app-button btnType="Number" [text]="left" [isSelected]="selectedBtn === 'L'" [isSuccess]="selectedBtn === 'L' && isCorrect" (isSelected)="selectedLeft($event)"></app-button></div>
-    <div class="col"><app-button btnType="Number" [text]="right"[isSelected]="selectedBtn === 'R'" [isSuccess]="selectedBtn === 'R' && isCorrect" (isSelected)="selectedRight($event)"></app-button></div>
+    <p class="col">Find the <b>Greater</b> number</p>
+</div>
+<div class="row">
+    <div class="col"><app-tile [text]="left" [isSelected]="selectedBtn === 'L'"
+            [isSuccess]="selectedBtn === 'L' && isCorrect" (isSelected)="selectedLeft($event)"></app-tile></div>
+    <div class="col"><app-tile [text]="right" [isSelected]="selectedBtn === 'R'"
+            [isSuccess]="selectedBtn === 'R' && isCorrect" (isSelected)="selectedRight($event)"></app-tile></div>
 </div>
 <div class="row">
     <div class="col">
-        <app-button btnType="Backward" (moved)="moved($event)"></app-button>
+        <app-button text="&lt; Back" (buttonClick)="moved(-1)"></app-button>
     </div>
     <div class="col">
-        <app-button btnType="Forward" (moved)="moved($event)"></app-button>
+        <app-button text="Next &gt;" (buttonClick)="moved(1)"></app-button>
     </div>
 </div>
