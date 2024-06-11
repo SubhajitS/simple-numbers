@@ -2,11 +2,12 @@
     display: flex;
     width: 65vw;
     margin: auto;
-}
-.col {
-    margin: 10px auto;
-    align-items: center;
-}
-.sbs {
-    width: fit-content;
+    &.title {
+        font-size: 30px;
+        padding: 20px;
+    }
+    .col {
+        margin: 10px auto;
+        align-items: center;
+    }
 }
