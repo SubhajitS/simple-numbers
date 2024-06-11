@@ -3,7 +3,10 @@ import { QuizEntry } from "./quiz-entry";
 import { Result } from "./result";
 
 export class Game {
-    private totalQuestions: number;
+    private _totalQuestions: number;
+    public get totalQuestions(): number {
+        return this._totalQuestions;
+    }
     private max: number;
     private min: number;
     private complexity: 2 | 3 | 4;
@@ -11,7 +14,7 @@ export class Game {
     private state: Array<Array<QuizEntry>> = [];
 
     constructor(totalQuestions: number = 10, complexity: 2 | 3 | 4 = 2, max: number = 20, min: number = 0) {
-        this.totalQuestions = totalQuestions;
+        this._totalQuestions = totalQuestions;
         this.complexity = complexity;
         this.max = max;
         this.min = min;
@@ -19,7 +22,7 @@ export class Game {
     }
 
     getQuestion(delta: 1 | 0 | -1): Array<QuizEntry> {
-        if ((this.pointer + delta < this.totalQuestions) && (this.pointer + delta >= 0))
+        if ((this.pointer + delta < this._totalQuestions) && (this.pointer + delta >= 0))
             this.pointer += delta;
 
         return this.state[this.pointer];
@@ -59,11 +62,11 @@ export class Game {
 
     getResult(): Outcome {
         const correct = this.state.flatMap(x => x).filter(e => e.state === Result.right).length;
-        return new Outcome(this.totalQuestions, correct)
+        return new Outcome(this._totalQuestions, correct)
     }
 
     private initiateGame() {
-        for (let i = 0; i < this.totalQuestions; i++) {
+        for (let i = 0; i < this._totalQuestions; i++) {
             const set: Array<QuizEntry> = [];
             for (let j = 0; j < this.complexity; j++) {
                 set.push(new QuizEntry(this.getRandomArbitrary(this.min, this.max)))

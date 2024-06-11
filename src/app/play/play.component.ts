@@ -5,6 +5,7 @@ import { Result } from '../../models/result';
 import { Router } from '@angular/router';
 import { TileState } from '../../reusables/tile/tile.component';
 import { ReusablesModule } from '../../reusables/reusables.module';
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-play',
@@ -16,12 +17,14 @@ import { ReusablesModule } from '../../reusables/reusables.module';
 export class PlayComponent implements OnInit {
   question: Array<QuizEntry> = []
   currentIndex: number = 0;
-  totalQuestions: number = 10;
+  totalQuestions: number;
 
   private game: Game;
 
-  constructor(public router: Router) {
-    this.game = new Game(this.totalQuestions, 3, 20, 0);
+  constructor(public router: Router, public gameService: GameService) {
+    gameService.createNewGame();
+    this.game = gameService.game;
+    this.totalQuestions = this.game.totalQuestions;
   }
 
   ngOnInit(): void {
