@@ -1,0 +1,15 @@
+@if(btnType==="Number"){
+<div class="number" [ngClass]="isSelected ? (isSuccess? 'selected-right': 'selected-wrong') : ''" (click)="onClick()">
+    {{text}}
+</div>
+}
+@if(btnType === "Forward") {
+    <div class="move" (click)="moveForward()">
+        Next &gt;
+    </div>
+}
+@if (btnType === "Backward") {
+    <div class="move" (click)="moveBackward()">
+        &lt; Back
+    </div>
+}

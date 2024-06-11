@@ -1,0 +1,39 @@
+.number {
+    padding: 15px;
+    font-size: 300%;
+    border-radius: 10px;
+    background-color: #ccc;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+    display: block;
+    box-shadow: 2px 2px 2px #777;
+    &:hover {
+        background-color: #777;
+    }
+}
+.selected-right {
+    background-color: #3b7d0f;
+    color: #fff;
+    &:hover {
+        background-color: #3b7d0f;
+    }
+}
+.selected-wrong {
+    background-color: #7d0f0f;
+    color: #fff;
+    &:hover {
+        background-color: #7d0f0f;
+    }
+}
+.move {
+    padding: 10px 20px;
+    font-size: 110%;
+    border-radius: 10px;
+    background-color: #31e0c3;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #777;
+    &:hover {
+        background-color: #21b69d;
+    }
+}
