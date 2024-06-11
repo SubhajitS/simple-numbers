@@ -28,7 +28,7 @@
     }
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (min-width: 481px) and (max-width: 1080px) {
     .row {
         width: 60vw;
 
