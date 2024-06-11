@@ -1,0 +1,3 @@
+<div class="tile" [ngClass]="state === 0 ? 'selected-right': state === 1 ? 'selected-wrong' : ''" (click)="onClick()">
+    {{text}}
+</div>

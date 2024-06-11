@@ -1,0 +1,24 @@
+<div class="row title">
+    <p class="col">Find the <b>Greatest</b> number [{{currentIndex+1}} of {{totalQuestions}}]</p>
+</div>
+<div class="row">
+    @for (entry of question; track entry.key) {
+        <div class="col">
+            <app-tile [text]="entry.key" [state]="entry.state" (stateChange)="onSelected($event)"></app-tile>
+        </div>
+    }
+</div>
+<div class="row btns">
+    <div class="col">
+        <app-button text="Reset" (buttonClick)="reset()"></app-button>
+    </div>
+    <div class="col">
+        <app-button text="&lt; Back" [disabled]="currentIndex === 0" (buttonClick)="moved(-1)"></app-button>
+    </div>
+    <div class="col">
+        <app-button text="Next &gt;" [disabled]="currentIndex+1 === totalQuestions" (buttonClick)="moved(1)"></app-button>
+    </div>
+    <div class="col">
+        <app-button text="Finish" (buttonClick)="finish()"></app-button>
+    </div>
+</div>

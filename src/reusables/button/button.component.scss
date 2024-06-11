@@ -1,0 +1,16 @@
+.btn {
+    padding: 10px 20px;
+    font-size: 110%;
+    border-radius: 10px;
+    background-color: #31e0c3;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 2px #777;
+    &:hover {
+        background-color: #21b69d;
+    }
+    &.disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+}

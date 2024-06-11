@@ -1,0 +1,39 @@
+.row {
+    display: flex;
+    width: 45vw;
+    margin: auto;
+
+    &.title {
+        font-size: 30px;
+        padding: 20px;
+    }
+
+    .col {
+        margin: 10px auto;
+        align-items: center;
+    }
+
+    &.btns {
+        width: 30vw;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .row {
+        width: 80vw;
+
+        &.btns {
+            width: 95vw;
+        }
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1080px) {
+    .row {
+        width: 60vw;
+
+        &.btns {
+            width: 65vw;
+        }
+    }
+}
