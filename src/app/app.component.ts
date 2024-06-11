@@ -9,6 +9,4 @@ import { ReusablesModule } from '../reusables/reusables.module';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'simple-number-app';
-}
+export class AppComponent { }
